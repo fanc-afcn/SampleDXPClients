@@ -131,6 +131,10 @@ namespace SampleControlBodyClient
                         MessageBox.Show(@"Document downloaded to \Downloads folder inside application folder");
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Documents not available for " + this.txtLicenseNumber.Text);
+                }
                 
             }
             else
