@@ -1,4 +1,4 @@
-﻿namespace ControlBodyLegacyClient
+﻿namespace SampleControlBodyClient
 {
     partial class MainForm
     {

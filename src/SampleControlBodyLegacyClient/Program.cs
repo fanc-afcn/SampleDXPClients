@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ControlBodyLegacyClient
+namespace SampleControlBodyLegacyClient
 {
     static class Program
     {

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using FANC.DXP.API.Client.Legacy.ControlBody;
 using FANC.DXP.API.Client.Legacy.ReferenceData;
 
-namespace ControlBodyLegacyClient
+namespace SampleControlBodyLegacyClient
 {
     public partial class MainForm : Form
     {
