@@ -1,4 +1,9 @@
 # SampleDXPClients
 .NET Sample Clients to interact with the FANC Data eXchange Platform
 
-- ControlBodyLegacyClient -> Uses the legacy API. New developments should avoid using this.
+## ControlBody
+
+Contains sample code for FANC approved control bodies to interact with the FANC DXP API
+
+- ControlBodyLegacyClient -> New developments should be based on this sample code.
+- SampleControlBodyLegacyClient -> Uses the legacy API. New developments should avoid using this.
