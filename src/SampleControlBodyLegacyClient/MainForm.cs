@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using FANC.DXP.API.Client.Legacy.ControlBody;
 using FANC.DXP.API.Client.Legacy.ReferenceData;
+using FANC.DXP.API.Models;
 
 namespace SampleControlBodyLegacyClient
 {
@@ -159,7 +160,7 @@ namespace SampleControlBodyLegacyClient
             MessageBox.Show(@"Configure butSendInspectionData_Click method !");
 
             //var inspectionData = new InspectionData();
-            //for (int i = 1; i <= 100; i++)
+            //for (int i = 1; i <= 5000; i++)
             //{
             //    inspectionData.PhysicalItems.Add(new PhysicalItem()
             //    {
