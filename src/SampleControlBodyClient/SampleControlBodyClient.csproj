@@ -35,8 +35,8 @@
     <Reference Include="FANC.DXP.API.Client, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FANC.DXP.API.Client.1.0.10\lib\net451\FANC.DXP.API.Client.dll</HintPath>
     </Reference>
-    <Reference Include="FANC.DXP.API.Models, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.API.Models.1.0.9\lib\net451\FANC.DXP.API.Models.dll</HintPath>
+    <Reference Include="FANC.DXP.API.Models, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.API.Models.1.0.11\lib\net451\FANC.DXP.API.Models.dll</HintPath>
     </Reference>
     <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IdentityModel.1.13.1\lib\net45\IdentityModel.dll</HintPath>
