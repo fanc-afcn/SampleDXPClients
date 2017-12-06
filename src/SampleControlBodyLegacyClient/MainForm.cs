@@ -140,9 +140,11 @@ namespace SampleControlBodyLegacyClient
                     using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite))
                     {
                         await result.Stream.CopyToAsync(fs);
-                        MessageBox.Show(@"Document downloaded to \Downloads folder inside application folder");
+                        MessageBox.Show(@"Document downloaded to \Downloads folder inside application folder", "Documents downloaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+                else
+                    MessageBox.Show(@"No documents found for this licence", "Documents not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 
             }
             else

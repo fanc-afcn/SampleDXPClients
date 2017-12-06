@@ -36,8 +36,8 @@
     <Reference Include="FANC.DXP.API.Client, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FANC.DXP.API.Client.1.0.10\lib\net451\FANC.DXP.API.Client.dll</HintPath>
     </Reference>
-    <Reference Include="FANC.DXP.API.Client.Legacy, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.API.Client.Legacy.1.0.5\lib\net451\FANC.DXP.API.Client.Legacy.dll</HintPath>
+    <Reference Include="FANC.DXP.API.Client.Legacy, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.API.Client.Legacy.1.0.6\lib\net451\FANC.DXP.API.Client.Legacy.dll</HintPath>
     </Reference>
     <Reference Include="FANC.DXP.API.Models, Version=1.0.11.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FANC.DXP.API.Models.1.0.11\lib\net451\FANC.DXP.API.Models.dll</HintPath>
