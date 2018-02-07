@@ -32,7 +32,7 @@
             this.butGetCodeListValues = new System.Windows.Forms.Button();
             this.butGetLicenses = new System.Windows.Forms.Button();
             this.butGetLicenseDetails = new System.Windows.Forms.Button();
-            this.butSendInspectionData = new System.Windows.Forms.Button();
+            this.butSendPhysicalInventory = new System.Windows.Forms.Button();
             this.dgResults = new System.Windows.Forms.DataGridView();
             this.txtCodeList = new System.Windows.Forms.TextBox();
             this.txtLicenseNumber = new System.Windows.Forms.TextBox();
@@ -88,16 +88,16 @@
             this.butGetLicenseDetails.UseVisualStyleBackColor = true;
             this.butGetLicenseDetails.Click += new System.EventHandler(this.butGetLicenseDetails_Click);
             // 
-            // butSendInspectionData
+            // butSendPhysicalInventory
             // 
-            this.butSendInspectionData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.butSendInspectionData.Location = new System.Drawing.Point(692, 514);
-            this.butSendInspectionData.Name = "butSendInspectionData";
-            this.butSendInspectionData.Size = new System.Drawing.Size(118, 23);
-            this.butSendInspectionData.TabIndex = 4;
-            this.butSendInspectionData.Text = "SendInspectionData";
-            this.butSendInspectionData.UseVisualStyleBackColor = true;
-            this.butSendInspectionData.Click += new System.EventHandler(this.butSendInspectionData_Click);
+            this.butSendPhysicalInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.butSendPhysicalInventory.Location = new System.Drawing.Point(649, 514);
+            this.butSendPhysicalInventory.Name = "butSendPhysicalInventory";
+            this.butSendPhysicalInventory.Size = new System.Drawing.Size(161, 23);
+            this.butSendPhysicalInventory.TabIndex = 4;
+            this.butSendPhysicalInventory.Text = "Send Physical Inventory";
+            this.butSendPhysicalInventory.UseVisualStyleBackColor = true;
+            this.butSendPhysicalInventory.Click += new System.EventHandler(this.butSendPhysicalInventory_Click);
             // 
             // dgResults
             // 
@@ -191,7 +191,7 @@
             this.butGetLicenseDocuments.UseVisualStyleBackColor = true;
             this.butGetLicenseDocuments.Click += new System.EventHandler(this.butGetLicenseDocuments_Click);
             // 
-            // ControlBodyClient
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -206,13 +206,13 @@
             this.Controls.Add(this.txtLicenseNumber);
             this.Controls.Add(this.txtCodeList);
             this.Controls.Add(this.dgResults);
-            this.Controls.Add(this.butSendInspectionData);
+            this.Controls.Add(this.butSendPhysicalInventory);
             this.Controls.Add(this.butGetLicenseDetails);
             this.Controls.Add(this.butGetLicenses);
             this.Controls.Add(this.butGetCodeListValues);
             this.Controls.Add(this.butGetCodeLists);
-            this.Name = "ControlBodyClient";
-            this.Text = "FANC ControlBody Legacy Test Client";
+            this.Name = "MainForm";
+            this.Text = "FANC ControlBody Test Client";
             ((System.ComponentModel.ISupportInitialize)(this.dgResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,7 +225,7 @@
         private System.Windows.Forms.Button butGetCodeListValues;
         private System.Windows.Forms.Button butGetLicenses;
         private System.Windows.Forms.Button butGetLicenseDetails;
-        private System.Windows.Forms.Button butSendInspectionData;
+        private System.Windows.Forms.Button butSendPhysicalInventory;
         private System.Windows.Forms.DataGridView dgResults;
         private System.Windows.Forms.TextBox txtCodeList;
         private System.Windows.Forms.TextBox txtLicenseNumber;

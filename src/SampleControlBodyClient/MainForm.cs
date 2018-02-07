@@ -4,7 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using FANC.DXP.API.Client;
-using FANC.DXP.API.Models;
+using FANC.DXP.DTO;
+using FANC.DXP.DTO.PHI;
 
 namespace SampleControlBodyClient
 {
@@ -20,10 +21,10 @@ namespace SampleControlBodyClient
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void butGetCodeLists_Click(object sender, EventArgs e)
+        private void butGetCodeLists_Click(object sender, EventArgs e)
         {
             var rds = new ReferenceDataClient();
-            var result = await rds.GetCodeListsAsync(this.txtAppCode.Text);
+            var result = rds.GetCodeLists(this.txtAppCode.Text);
 
             if (result != null)
             {
@@ -45,12 +46,12 @@ namespace SampleControlBodyClient
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void butGetCodeListValues_Click(object sender, EventArgs e)
+        private void butGetCodeListValues_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(this.txtCodeList.Text))
             {
-                var rds = new ReferenceDataClient();
-                var result = await rds.GetCodeListValuesAsync(this.txtCodeList.Text, this.txtAppCode.Text);
+                var rdClient = new ReferenceDataClient();
+                var result = rdClient.GetCodeListValues(this.txtCodeList.Text, this.txtAppCode.Text);
 
                 if (result != null)
                 {
@@ -76,13 +77,13 @@ namespace SampleControlBodyClient
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void butGetLicenses_Click(object sender, EventArgs e)
+        private void butGetLicenses_Click(object sender, EventArgs e)
         {
-            var cbsc = new ControlBodyClient();
+            var phiClient = new PHIClient();
 
             var sinceDate = this.dtpSinceDate.Checked ? dtpSinceDate.Value : new DateTime?();
 
-            var result = await cbsc.GetLicensesAsync(sinceDate);
+            var result = phiClient.GetLicenses(sinceDate);
 
             this.dgResults.DataSource = result.ReturnObject.ToList();
             this.dgResults.Refresh();
@@ -93,14 +94,14 @@ namespace SampleControlBodyClient
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void butGetLicenseDetails_Click(object sender, EventArgs e)
+        private void butGetLicenseDetails_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrWhiteSpace(this.txtLicenseNumber.Text))
             {
-                var cbsc = new FANC.DXP.API.Client.ControlBodyClient();
-                var result = await cbsc.GetLicenseDetailsAsync(this.txtLicenseNumber.Text);
+                var phiClient = new PHIClient();
+                var result = phiClient.GetLicenseDetails(this.txtLicenseNumber.Text);
 
-                this.dgResults.DataSource = new List<FANC.DXP.API.Models.License>() {result.ReturnObject};
+                this.dgResults.DataSource = new List<License>() {result.ReturnObject};
                 this.dgResults.Refresh();
             }
             else
@@ -117,8 +118,8 @@ namespace SampleControlBodyClient
         {
             if (!String.IsNullOrWhiteSpace(this.txtLicenseNumber.Text))
             {
-                var cbsc = new ControlBodyClient();
-                var result = await cbsc.GetLicenseDocumentsAsync(this.txtLicenseNumber.Text);
+                var phiClient = new PHIClient();
+                var result = phiClient.GetLicenseDocuments(this.txtLicenseNumber.Text);
 
                 if (result.ReturnObject?.Stream != null)
                 {
@@ -141,39 +142,19 @@ namespace SampleControlBodyClient
                 MessageBox.Show("Enter LicenseNumber !");
         }
 
-        /// <summary>
-        /// Creates inspection data and sends it to the API
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void butSendInspectionData_Click(object sender, EventArgs e)
+        private void butSendPhysicalInventory_Click(object sender, EventArgs e)
         {
-
-            MessageBox.Show(@"Configure butSendInspectionData_Click method !");
-
-            var inspectionData = new InspectionData();
-            for (int i = 1; i <= 100; i++)
+            var inventory = new PhysicalInventory();
+            var item1 = new PhysicalItem()
             {
-                inspectionData.PhysicalItems.Add(new PhysicalItem()
-                {
-                    UniqueIdNumber = "UID" + i.ToString(),
-                    DataProviderReference = "DPR" + i.ToString(),
-                    OperationalEntityNumber = "OE" + i.ToString(),
-                    PhysicalItemCategoryCode = "EQUIP",
-                    LicenseItemTypeCode = "47",
-                    ManufacturerCode = "162",
-                    BrandTypeCustomValue = "BrandType",
-                    BrandCustomValue = "Brand",
-                    NumberOfDetectors = 1,
-                    NumberOfTubes = 1
-                });
-            }
+                UniqueIdNumber = "test123",
+                OperationalEntityNumber = "OE-123456"
+                //complete other fields as required
+            };
+            inventory.PhysicalItems.Add(item1);
 
-
-            var cbsc = new ControlBodyClient();
-            var result = await cbsc.PostInspectionDataAsync(inspectionData);
+            var phiClient = new PHIClient();
+            phiClient.PostPhysicalInventory(inventory);
         }
-
-        
     }
 }
