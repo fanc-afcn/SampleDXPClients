@@ -43,7 +43,16 @@
             this.lblApplication = new System.Windows.Forms.Label();
             this.txtAppCode = new System.Windows.Forms.TextBox();
             this.butGetLicenseDocuments = new System.Windows.Forms.Button();
+            this.grpDataSubmission = new System.Windows.Forms.GroupBox();
+            this.butDownloadProcessingResult = new System.Windows.Forms.Button();
+            this.butGetDataFileStatus = new System.Windows.Forms.Button();
+            this.lblDataFileNumber = new System.Windows.Forms.Label();
+            this.txtDataFileNumber = new System.Windows.Forms.TextBox();
+            this.grpLog = new System.Windows.Forms.GroupBox();
+            this.rtxtLog = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgResults)).BeginInit();
+            this.grpDataSubmission.SuspendLayout();
+            this.grpLog.SuspendLayout();
             this.SuspendLayout();
             // 
             // butGetCodeLists
@@ -69,7 +78,7 @@
             // butGetLicenses
             // 
             this.butGetLicenses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butGetLicenses.Location = new System.Drawing.Point(692, 12);
+            this.butGetLicenses.Location = new System.Drawing.Point(684, 12);
             this.butGetLicenses.Name = "butGetLicenses";
             this.butGetLicenses.Size = new System.Drawing.Size(118, 23);
             this.butGetLicenses.TabIndex = 2;
@@ -80,7 +89,7 @@
             // butGetLicenseDetails
             // 
             this.butGetLicenseDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butGetLicenseDetails.Location = new System.Drawing.Point(692, 41);
+            this.butGetLicenseDetails.Location = new System.Drawing.Point(684, 41);
             this.butGetLicenseDetails.Name = "butGetLicenseDetails";
             this.butGetLicenseDetails.Size = new System.Drawing.Size(118, 23);
             this.butGetLicenseDetails.TabIndex = 3;
@@ -90,10 +99,9 @@
             // 
             // butSendPhysicalInventory
             // 
-            this.butSendPhysicalInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.butSendPhysicalInventory.Location = new System.Drawing.Point(649, 514);
+            this.butSendPhysicalInventory.Location = new System.Drawing.Point(2, 24);
             this.butSendPhysicalInventory.Name = "butSendPhysicalInventory";
-            this.butSendPhysicalInventory.Size = new System.Drawing.Size(161, 23);
+            this.butSendPhysicalInventory.Size = new System.Drawing.Size(147, 23);
             this.butSendPhysicalInventory.TabIndex = 4;
             this.butSendPhysicalInventory.Text = "Send Physical Inventory";
             this.butSendPhysicalInventory.UseVisualStyleBackColor = true;
@@ -107,7 +115,7 @@
             this.dgResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgResults.Location = new System.Drawing.Point(12, 99);
             this.dgResults.Name = "dgResults";
-            this.dgResults.Size = new System.Drawing.Size(798, 409);
+            this.dgResults.Size = new System.Drawing.Size(790, 367);
             this.dgResults.TabIndex = 5;
             // 
             // txtCodeList
@@ -120,7 +128,7 @@
             // txtLicenseNumber
             // 
             this.txtLicenseNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLicenseNumber.Location = new System.Drawing.Point(495, 41);
+            this.txtLicenseNumber.Location = new System.Drawing.Point(487, 41);
             this.txtLicenseNumber.Name = "txtLicenseNumber";
             this.txtLicenseNumber.Size = new System.Drawing.Size(191, 20);
             this.txtLicenseNumber.TabIndex = 7;
@@ -136,8 +144,9 @@
             // 
             // lblLicenseNumber
             // 
+            this.lblLicenseNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLicenseNumber.AutoSize = true;
-            this.lblLicenseNumber.Location = new System.Drawing.Point(402, 44);
+            this.lblLicenseNumber.Location = new System.Drawing.Point(393, 44);
             this.lblLicenseNumber.Name = "lblLicenseNumber";
             this.lblLicenseNumber.Size = new System.Drawing.Size(87, 13);
             this.lblLicenseNumber.TabIndex = 9;
@@ -145,8 +154,9 @@
             // 
             // lblSinceDate
             // 
+            this.lblSinceDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSinceDate.AutoSize = true;
-            this.lblSinceDate.Location = new System.Drawing.Point(402, 21);
+            this.lblSinceDate.Location = new System.Drawing.Point(393, 21);
             this.lblSinceDate.Name = "lblSinceDate";
             this.lblSinceDate.Size = new System.Drawing.Size(63, 13);
             this.lblSinceDate.TabIndex = 11;
@@ -154,9 +164,10 @@
             // 
             // dtpSinceDate
             // 
+            this.dtpSinceDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpSinceDate.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpSinceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpSinceDate.Location = new System.Drawing.Point(495, 15);
+            this.dtpSinceDate.Location = new System.Drawing.Point(486, 15);
             this.dtpSinceDate.Name = "dtpSinceDate";
             this.dtpSinceDate.ShowCheckBox = true;
             this.dtpSinceDate.Size = new System.Drawing.Size(191, 20);
@@ -183,7 +194,7 @@
             // butGetLicenseDocuments
             // 
             this.butGetLicenseDocuments.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.butGetLicenseDocuments.Location = new System.Drawing.Point(692, 70);
+            this.butGetLicenseDocuments.Location = new System.Drawing.Point(684, 70);
             this.butGetLicenseDocuments.Name = "butGetLicenseDocuments";
             this.butGetLicenseDocuments.Size = new System.Drawing.Size(118, 23);
             this.butGetLicenseDocuments.TabIndex = 15;
@@ -191,11 +202,86 @@
             this.butGetLicenseDocuments.UseVisualStyleBackColor = true;
             this.butGetLicenseDocuments.Click += new System.EventHandler(this.butGetLicenseDocuments_Click);
             // 
+            // grpDataSubmission
+            // 
+            this.grpDataSubmission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpDataSubmission.Controls.Add(this.butDownloadProcessingResult);
+            this.grpDataSubmission.Controls.Add(this.butGetDataFileStatus);
+            this.grpDataSubmission.Controls.Add(this.lblDataFileNumber);
+            this.grpDataSubmission.Controls.Add(this.txtDataFileNumber);
+            this.grpDataSubmission.Controls.Add(this.butSendPhysicalInventory);
+            this.grpDataSubmission.Location = new System.Drawing.Point(575, 472);
+            this.grpDataSubmission.Name = "grpDataSubmission";
+            this.grpDataSubmission.Size = new System.Drawing.Size(226, 159);
+            this.grpDataSubmission.TabIndex = 16;
+            this.grpDataSubmission.TabStop = false;
+            this.grpDataSubmission.Text = "Data Submission";
+            // 
+            // butDownloadProcessingResult
+            // 
+            this.butDownloadProcessingResult.Location = new System.Drawing.Point(6, 123);
+            this.butDownloadProcessingResult.Name = "butDownloadProcessingResult";
+            this.butDownloadProcessingResult.Size = new System.Drawing.Size(143, 23);
+            this.butDownloadProcessingResult.TabIndex = 8;
+            this.butDownloadProcessingResult.Text = "Download Result";
+            this.butDownloadProcessingResult.UseVisualStyleBackColor = true;
+            this.butDownloadProcessingResult.Click += new System.EventHandler(this.butDownloadProcessingResult_Click);
+            // 
+            // butGetDataFileStatus
+            // 
+            this.butGetDataFileStatus.Location = new System.Drawing.Point(6, 94);
+            this.butGetDataFileStatus.Name = "butGetDataFileStatus";
+            this.butGetDataFileStatus.Size = new System.Drawing.Size(143, 23);
+            this.butGetDataFileStatus.TabIndex = 7;
+            this.butGetDataFileStatus.Text = "Get DataFile Status";
+            this.butGetDataFileStatus.UseVisualStyleBackColor = true;
+            this.butGetDataFileStatus.Click += new System.EventHandler(this.butGetDataFileStatus_Click);
+            // 
+            // lblDataFileNumber
+            // 
+            this.lblDataFileNumber.AutoSize = true;
+            this.lblDataFileNumber.Location = new System.Drawing.Point(3, 51);
+            this.lblDataFileNumber.Name = "lblDataFileNumber";
+            this.lblDataFileNumber.Size = new System.Drawing.Size(89, 13);
+            this.lblDataFileNumber.TabIndex = 6;
+            this.lblDataFileNumber.Text = "DataFile Number:";
+            // 
+            // txtDataFileNumber
+            // 
+            this.txtDataFileNumber.Location = new System.Drawing.Point(6, 67);
+            this.txtDataFileNumber.Name = "txtDataFileNumber";
+            this.txtDataFileNumber.Size = new System.Drawing.Size(143, 20);
+            this.txtDataFileNumber.TabIndex = 5;
+            // 
+            // grpLog
+            // 
+            this.grpLog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpLog.Controls.Add(this.rtxtLog);
+            this.grpLog.Location = new System.Drawing.Point(15, 472);
+            this.grpLog.Name = "grpLog";
+            this.grpLog.Size = new System.Drawing.Size(555, 234);
+            this.grpLog.TabIndex = 17;
+            this.grpLog.TabStop = false;
+            this.grpLog.Text = "Log";
+            // 
+            // rtxtLog
+            // 
+            this.rtxtLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtxtLog.Location = new System.Drawing.Point(3, 16);
+            this.rtxtLog.Name = "rtxtLog";
+            this.rtxtLog.ReadOnly = true;
+            this.rtxtLog.Size = new System.Drawing.Size(549, 215);
+            this.rtxtLog.TabIndex = 10;
+            this.rtxtLog.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 549);
+            this.ClientSize = new System.Drawing.Size(814, 718);
+            this.Controls.Add(this.grpLog);
+            this.Controls.Add(this.grpDataSubmission);
             this.Controls.Add(this.butGetLicenseDocuments);
             this.Controls.Add(this.lblApplication);
             this.Controls.Add(this.txtAppCode);
@@ -206,7 +292,6 @@
             this.Controls.Add(this.txtLicenseNumber);
             this.Controls.Add(this.txtCodeList);
             this.Controls.Add(this.dgResults);
-            this.Controls.Add(this.butSendPhysicalInventory);
             this.Controls.Add(this.butGetLicenseDetails);
             this.Controls.Add(this.butGetLicenses);
             this.Controls.Add(this.butGetCodeListValues);
@@ -214,6 +299,9 @@
             this.Name = "MainForm";
             this.Text = "FANC ControlBody Test Client";
             ((System.ComponentModel.ISupportInitialize)(this.dgResults)).EndInit();
+            this.grpDataSubmission.ResumeLayout(false);
+            this.grpDataSubmission.PerformLayout();
+            this.grpLog.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +324,13 @@
         private System.Windows.Forms.Label lblApplication;
         private System.Windows.Forms.TextBox txtAppCode;
         private System.Windows.Forms.Button butGetLicenseDocuments;
+        private System.Windows.Forms.GroupBox grpDataSubmission;
+        private System.Windows.Forms.Button butDownloadProcessingResult;
+        private System.Windows.Forms.Button butGetDataFileStatus;
+        private System.Windows.Forms.Label lblDataFileNumber;
+        private System.Windows.Forms.TextBox txtDataFileNumber;
+        private System.Windows.Forms.GroupBox grpLog;
+        private System.Windows.Forms.RichTextBox rtxtLog;
     }
 }
 
