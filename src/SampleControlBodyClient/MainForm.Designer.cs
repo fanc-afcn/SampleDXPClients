@@ -44,7 +44,7 @@
             this.txtAppCode = new System.Windows.Forms.TextBox();
             this.butGetLicenseDocuments = new System.Windows.Forms.Button();
             this.grpDataSubmission = new System.Windows.Forms.GroupBox();
-            this.butDownloadProcessingResult = new System.Windows.Forms.Button();
+            this.butGetDataFileProcessingResult = new System.Windows.Forms.Button();
             this.butGetDataFileStatus = new System.Windows.Forms.Button();
             this.lblDataFileNumber = new System.Windows.Forms.Label();
             this.txtDataFileNumber = new System.Windows.Forms.TextBox();
@@ -205,7 +205,7 @@
             // grpDataSubmission
             // 
             this.grpDataSubmission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpDataSubmission.Controls.Add(this.butDownloadProcessingResult);
+            this.grpDataSubmission.Controls.Add(this.butGetDataFileProcessingResult);
             this.grpDataSubmission.Controls.Add(this.butGetDataFileStatus);
             this.grpDataSubmission.Controls.Add(this.lblDataFileNumber);
             this.grpDataSubmission.Controls.Add(this.txtDataFileNumber);
@@ -217,15 +217,15 @@
             this.grpDataSubmission.TabStop = false;
             this.grpDataSubmission.Text = "Data Submission";
             // 
-            // butDownloadProcessingResult
+            // butGetDataFileProcessingResult
             // 
-            this.butDownloadProcessingResult.Location = new System.Drawing.Point(6, 123);
-            this.butDownloadProcessingResult.Name = "butDownloadProcessingResult";
-            this.butDownloadProcessingResult.Size = new System.Drawing.Size(143, 23);
-            this.butDownloadProcessingResult.TabIndex = 8;
-            this.butDownloadProcessingResult.Text = "Download Result";
-            this.butDownloadProcessingResult.UseVisualStyleBackColor = true;
-            this.butDownloadProcessingResult.Click += new System.EventHandler(this.butDownloadProcessingResult_Click);
+            this.butGetDataFileProcessingResult.Location = new System.Drawing.Point(6, 123);
+            this.butGetDataFileProcessingResult.Name = "butGetDataFileProcessingResult";
+            this.butGetDataFileProcessingResult.Size = new System.Drawing.Size(166, 23);
+            this.butGetDataFileProcessingResult.TabIndex = 8;
+            this.butGetDataFileProcessingResult.Text = "Get DataFile Processing Result";
+            this.butGetDataFileProcessingResult.UseVisualStyleBackColor = true;
+            this.butGetDataFileProcessingResult.Click += new System.EventHandler(this.butGetDataFileProcessingResult_Click);
             // 
             // butGetDataFileStatus
             // 
@@ -325,7 +325,7 @@
         private System.Windows.Forms.TextBox txtAppCode;
         private System.Windows.Forms.Button butGetLicenseDocuments;
         private System.Windows.Forms.GroupBox grpDataSubmission;
-        private System.Windows.Forms.Button butDownloadProcessingResult;
+        private System.Windows.Forms.Button butGetDataFileProcessingResult;
         private System.Windows.Forms.Button butGetDataFileStatus;
         private System.Windows.Forms.Label lblDataFileNumber;
         private System.Windows.Forms.TextBox txtDataFileNumber;

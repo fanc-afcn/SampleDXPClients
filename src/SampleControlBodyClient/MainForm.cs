@@ -162,14 +162,22 @@ namespace SampleControlBodyClient
             var inventory = new PhysicalInventory();
 
             var rnd = new Random();
-            var amount = rnd.Next(1, 10);
+            var amount = rnd.Next(500, 2500); //change here to generate a random number of items for testing purposes. Please do not use more than 10000 if submitting to the FANC servers.
 
             for (int i = 1; i <= amount; i++)
             {
+                //generating a sample item here to submit (will most likely NOT pass validation)
                 var item = new PhysicalItem()
                 {
-                    UniqueIdNumber = new Guid().ToString("N"),
-                    OperationalEntityNumber = "OE-123456"
+                    UniqueIdNumber = Guid.NewGuid().ToString("N"), //using a unique guid as example here. In reality, this should be the physical unique identifier as labelled on the item (e.g. unique serial number)
+                    OperationalEntityNumber = "OE-123456",
+                    LicenseItemTypeCode = "ionsimplanter",
+                    UseCode = "1",
+                    DistributerCode = "250",
+                    ManufacturerCode = "250",
+                    ModelCode = "720",
+                    ConstructionYear = 1999,
+                    PhysicalItemStatusCode = "INUSE"
                     //complete other fields as required
                 };
                 inventory.PhysicalItems.Add(item);
@@ -192,10 +200,12 @@ namespace SampleControlBodyClient
         {
             if (!string.IsNullOrWhiteSpace(this.txtDataFileNumber.Text))
             {
+                var dataFileNumber = this.txtDataFileNumber.Text;
+
                 this.rtxtLog.Text = "";
 
                 var phiClient = new PHIClient();
-                var result = await phiClient.GetDataFileStatusAsync(this.txtDataFileNumber.Text);
+                var result = await phiClient.GetDataFileStatusAsync(dataFileNumber);
                 this.LogApiCallResult(result);
             }
             else
@@ -204,28 +214,38 @@ namespace SampleControlBodyClient
             }
         }
 
-        /// <summary>
-        /// Downloads the processing result of a datafile
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private async void butDownloadProcessingResult_Click(object sender, EventArgs e)
+        private async void butGetDataFileProcessingResult_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(this.txtDataFileNumber.Text))
             {
+                var dataFileNumber = this.txtDataFileNumber.Text;
+
                 var phiClient = new PHIClient();
-                var result = await phiClient.GetDataFileProcessingResultAsync(this.txtDataFileNumber.Text);
+                var result = await phiClient.GetDataFileProcessingResultAsync(dataFileNumber);
                 this.LogApiCallResult(result, false);
 
-                if (result.ReturnObject?.Stream != null)
+                //as example here, serialize results to a json file. In reality, the validation results should probably be integrated back into your application in some kind of "FANC submission report"
+                if (result.ReturnObject != null)
                 {
-                    var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Downloads\", result.ReturnObject.FileName);
+                    var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"Downloads\", dataFileNumber + "_ProcessingResult.json");
                     Directory.CreateDirectory(Path.GetDirectoryName(filePath));
 
                     using (var fs = new FileStream(filePath, FileMode.Create, FileAccess.ReadWrite))
                     {
-                        await result.ReturnObject.Stream.CopyToAsync(fs);
-                        MessageBox.Show(@"Processing result downloaded to \Downloads folder inside application folder");
+                        using (var sw = new StreamWriter(fs))
+                        {
+                            using (var writer = new JsonTextWriter(sw))
+                            {
+                                var serializer = new JsonSerializer()
+                                {
+                                    Formatting = Formatting.Indented
+                                };
+
+                                serializer.Serialize(writer, result.ReturnObject);
+                                MessageBox.Show(@"Processing result downloaded to \Downloads folder inside application folder");
+                            }
+                        }
+                            
                     }
                 }
                 else

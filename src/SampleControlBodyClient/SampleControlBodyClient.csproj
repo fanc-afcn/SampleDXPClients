@@ -32,14 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FANC.DXP.API.Client, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.API.Client.2.1.0\lib\net451\FANC.DXP.API.Client.dll</HintPath>
+    <Reference Include="FANC.DXP.API.Client, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.API.Client.2.2.0\lib\net451\FANC.DXP.API.Client.dll</HintPath>
     </Reference>
-    <Reference Include="FANC.DXP.DTO, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.DTO.2.1.0\lib\net451\FANC.DXP.DTO.dll</HintPath>
+    <Reference Include="FANC.DXP.DTO, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.DTO.2.2.0\lib\net451\FANC.DXP.DTO.dll</HintPath>
     </Reference>
-    <Reference Include="FANC.DXP.DTO.PHI, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.DTO.PHI.2.1.0\lib\net451\FANC.DXP.DTO.PHI.dll</HintPath>
+    <Reference Include="FANC.DXP.DTO.PHI, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.DTO.PHI.2.2.0\lib\net451\FANC.DXP.DTO.PHI.dll</HintPath>
     </Reference>
     <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IdentityModel.1.13.1\lib\net45\IdentityModel.dll</HintPath>
@@ -103,7 +103,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
