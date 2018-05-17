@@ -32,14 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FANC.DXP.API.Client, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.API.Client.2.2.0\lib\net451\FANC.DXP.API.Client.dll</HintPath>
+    <Reference Include="FANC.DXP.API.Client, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.API.Client.2.3.0\lib\net451\FANC.DXP.API.Client.dll</HintPath>
     </Reference>
-    <Reference Include="FANC.DXP.DTO, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.DTO.2.2.0\lib\net451\FANC.DXP.DTO.dll</HintPath>
+    <Reference Include="FANC.DXP.DTO, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.DTO.2.3.0\lib\net451\FANC.DXP.DTO.dll</HintPath>
     </Reference>
-    <Reference Include="FANC.DXP.DTO.PHI, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FANC.DXP.DTO.PHI.2.2.0\lib\net451\FANC.DXP.DTO.PHI.dll</HintPath>
+    <Reference Include="FANC.DXP.DTO.PHI, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FANC.DXP.DTO.PHI.2.3.0\lib\net451\FANC.DXP.DTO.PHI.dll</HintPath>
     </Reference>
     <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\IdentityModel.1.13.1\lib\net45\IdentityModel.dll</HintPath>
@@ -56,8 +56,8 @@
     <Reference Include="System.Net.Http.Extensions.Compression.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Net.Http.Extensions.Compression.Client.2.0.5\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\System.Net.Http.Extensions.Compression.Core.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
