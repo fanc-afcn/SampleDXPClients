@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlBody", "ControlBody", "{81111FFA-8FF6-4AC9-A6A0-403993D87721}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleControlBodyClient", "src\API_v1\SampleControlBodyClient\SampleControlBodyClient.csproj", "{935DE2FA-2F8B-4512-919B-569C70AA25EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleControlBodyClient", "src\SampleControlBodyClient\SampleControlBodyClient.csproj", "{935DE2FA-2F8B-4512-919B-569C70AA25EF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API_v2", "API_v2", "{8C92FF71-CD93-415C-B142-B9D4925AB60F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API_v1", "API_v1", "{A1AE5A15-309D-4DBA-A1D2-109B145312B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleJSClient", "src\API_v2\SampleJSClient\SampleJSClient.csproj", "{0AD306B1-857C-4865-906F-25F91AE24999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +21,17 @@ Global
 		{935DE2FA-2F8B-4512-919B-569C70AA25EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{935DE2FA-2F8B-4512-919B-569C70AA25EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{935DE2FA-2F8B-4512-919B-569C70AA25EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD306B1-857C-4865-906F-25F91AE24999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD306B1-857C-4865-906F-25F91AE24999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD306B1-857C-4865-906F-25F91AE24999}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD306B1-857C-4865-906F-25F91AE24999}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{935DE2FA-2F8B-4512-919B-569C70AA25EF} = {81111FFA-8FF6-4AC9-A6A0-403993D87721}
+		{935DE2FA-2F8B-4512-919B-569C70AA25EF} = {A1AE5A15-309D-4DBA-A1D2-109B145312B6}
+		{0AD306B1-857C-4865-906F-25F91AE24999} = {8C92FF71-CD93-415C-B142-B9D4925AB60F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7DE15089-10B3-4269-B189-5C0255E9668F}
