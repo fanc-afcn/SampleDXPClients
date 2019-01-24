@@ -17,12 +17,13 @@ document.getElementById("api").addEventListener("click", api, false);
 document.getElementById("logout").addEventListener("click", logout, false);
 
 var config = {
-    authority: "(identity server url)", //<-- Edit this line with correct URL
-    client_id: "jstestclient",
-    redirect_uri: "https://localhost:5001/callback.html",
-    response_type: "id_token token",
-    scope: "openid profile dxpapi_test",
-    post_logout_redirect_uri: "https://localhost:5001/index.html",
+    //Insert adequate values in properties below
+    authority: "", 
+    client_id: "",
+    redirect_uri: "",
+    response_type: "",
+    scope: "",
+    post_logout_redirect_uri: "",
 };
 var mgr = new Oidc.UserManager(config);
 
@@ -41,7 +42,7 @@ function login() {
 
 function api() {
     mgr.getUser().then(function (user) {
-        var url = "(api test method url)"; //<-- Edit this line with correct URL
+        var url = ""; //<-- Edit this line with correct test method URL
 
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url);
