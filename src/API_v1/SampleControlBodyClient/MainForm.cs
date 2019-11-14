@@ -8,14 +8,27 @@ using FANC.DXP.API.Client;
 using FANC.DXP.DTO;
 using FANC.DXP.DTO.PHI;
 using Newtonsoft.Json;
+using SampleControlBodyClient.Properties;
 
 namespace SampleControlBodyClient
 {
     public partial class MainForm : Form
     {
+        private string apiUri;
+        private string userName;
+        private string password;
+        private bool useCompression;
+        private bool setExplicitTls;
+
         public MainForm()
         {
             InitializeComponent();
+
+            this.apiUri = Settings.Default.ApiUri;
+            this.userName = Settings.Default.UserName;
+            this.password = Settings.Default.Password;
+            this.useCompression = Settings.Default.UseCompression;
+            this.setExplicitTls = Settings.Default.SetExplicitTls;
         }
 
         /// <summary>
@@ -25,8 +38,8 @@ namespace SampleControlBodyClient
         /// <param name="e"></param>
         private async void butGetCodeLists_Click(object sender, EventArgs e)
         {
-            var rds = new ReferenceDataClient();
-            var result = await rds.GetCodeListsAsync(this.txtAppCode.Text);
+            var rdClient = new ReferenceDataClient(apiUri, userName, password, useCompression, setExplicitTls);
+            var result = await rdClient.GetCodeListsAsync(this.txtAppCode.Text);
             this.LogApiCallResult(result, false);
 
             if (result != null)
@@ -53,7 +66,7 @@ namespace SampleControlBodyClient
         {
             if (!String.IsNullOrWhiteSpace(this.txtCodeList.Text))
             {
-                var rdClient = new ReferenceDataClient();
+                var rdClient = new ReferenceDataClient(apiUri, userName, password, useCompression, setExplicitTls);
                 var result = await rdClient.GetCodeListValuesAsync(this.txtCodeList.Text, this.txtAppCode.Text);
                 this.LogApiCallResult(result, false);
 
@@ -83,7 +96,7 @@ namespace SampleControlBodyClient
         /// <param name="e"></param>
         private async void butGetLicenses_Click(object sender, EventArgs e)
         {
-            var phiClient = new PHIClient();
+            var phiClient = new PHIClient(apiUri, userName, password, useCompression, setExplicitTls);
 
             var sinceDate = this.dtpSinceDate.Checked ? dtpSinceDate.Value : new DateTime?();
 
@@ -103,7 +116,7 @@ namespace SampleControlBodyClient
         {
             if (!String.IsNullOrWhiteSpace(this.txtLicenseNumber.Text))
             {
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(apiUri, userName, password, useCompression, setExplicitTls);
                 var result = await phiClient.GetLicenseDetailsAsync(this.txtLicenseNumber.Text);
                 this.LogApiCallResult(result, false);
 
@@ -124,7 +137,7 @@ namespace SampleControlBodyClient
         {
             if (!String.IsNullOrWhiteSpace(this.txtLicenseNumber.Text))
             {
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(apiUri, userName, password, useCompression, setExplicitTls);
                 var result = await phiClient.GetLicenseDocumentsAsync(this.txtLicenseNumber.Text);
                 this.LogApiCallResult(result, false);
 
@@ -183,7 +196,7 @@ namespace SampleControlBodyClient
                 inventory.PhysicalItems.Add(item);
             }
 
-            var phiClient = new PHIClient();
+            var phiClient = new PHIClient(apiUri, userName, password, useCompression, setExplicitTls);
             var result = await phiClient.PostPhysicalInventoryAsync(inventory);
             this.LogApiCallResult(result);
 
@@ -204,7 +217,7 @@ namespace SampleControlBodyClient
 
                 this.rtxtLog.Text = "";
 
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(apiUri, userName, password, useCompression, setExplicitTls);
                 var result = await phiClient.GetDataFileStatusAsync(dataFileNumber);
                 this.LogApiCallResult(result);
             }
@@ -220,7 +233,7 @@ namespace SampleControlBodyClient
             {
                 var dataFileNumber = this.txtDataFileNumber.Text;
 
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(apiUri, userName, password, useCompression, setExplicitTls);
                 var result = await phiClient.GetDataFileProcessingResultAsync(dataFileNumber);
                 this.LogApiCallResult(result, false);
 
