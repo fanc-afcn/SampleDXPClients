@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ using FANC.DXP.API.Client;
 using FANC.DXP.DTO;
 using FANC.DXP.DTO.PHI;
 using Newtonsoft.Json;
-using SamplePHIClient.Properties;
 
-namespace SampleControlBodyClient
+
+namespace SamplePHIClient
 {
     public partial class MainForm : Form
     {
@@ -21,7 +22,11 @@ namespace SampleControlBodyClient
         {
             InitializeComponent();
 
-            this.settings = new DXPAPIClientSettings(Settings.Default.ApiUri, Settings.Default.ClientId, Settings.Default.ClientSecret);
+            var apiUri = ConfigurationManager.AppSettings["apiUri"];
+            var clientId = ConfigurationManager.AppSettings["clientId"];
+            var clientSecret = ConfigurationManager.AppSettings["clientSecret"];
+            
+            this.settings = new DXPAPIClientSettings(apiUri, clientId, clientSecret);
             
         }
 
