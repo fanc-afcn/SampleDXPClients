@@ -8,7 +8,7 @@ using FANC.DXP.API.Client;
 using FANC.DXP.DTO;
 using FANC.DXP.DTO.PHI;
 using Newtonsoft.Json;
-using SampleControlBodyClient.Properties;
+using SamplePHIClient.Properties;
 
 namespace SampleControlBodyClient
 {

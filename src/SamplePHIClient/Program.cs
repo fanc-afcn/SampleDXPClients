@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using SampleControlBodyClient;
 
-namespace SampleControlBodyClient
+namespace SamplePHIClient
 {
     static class Program
     {

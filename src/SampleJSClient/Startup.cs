@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace JS_Test_Client
+namespace SampleJSClient
 {
     public class Startup
     {

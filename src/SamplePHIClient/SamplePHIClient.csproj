@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{935DE2FA-2F8B-4512-919B-569C70AA25EF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SampleControlBodyClient</RootNamespace>
-    <AssemblyName>SampleControlBodyClient</AssemblyName>
+    <RootNamespace>SamplePHIClient</RootNamespace>
+    <AssemblyName>SamplePHIClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
