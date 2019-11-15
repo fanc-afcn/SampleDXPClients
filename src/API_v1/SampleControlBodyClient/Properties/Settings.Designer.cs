@@ -34,37 +34,19 @@ namespace SampleControlBodyClient.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("(INSERT USERNAME HERE)")]
-        public string UserName {
+        [global::System.Configuration.DefaultSettingValueAttribute("(INSERT ID HERE)")]
+        public string ClientId {
             get {
-                return ((string)(this["UserName"]));
+                return ((string)(this["ClientId"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("(INSERT PASSWORD HERE)")]
-        public string Password {
+        [global::System.Configuration.DefaultSettingValueAttribute("(INSERT SECRET HERE)")]
+        public string ClientSecret {
             get {
-                return ((string)(this["Password"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool UseCompression {
-            get {
-                return ((bool)(this["UseCompression"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SetExplicitTls {
-            get {
-                return ((bool)(this["SetExplicitTls"]));
+                return ((string)(this["ClientSecret"]));
             }
         }
     }
