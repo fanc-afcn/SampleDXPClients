@@ -4,7 +4,8 @@ Sample Clients to interact with the FANC Data eXchange Platform API.
 
 ### SamplePHIClient
 
-Contains sample code for FANC approved partners of the Physical Inventory Project (PHI)
+Contains sample code for FANC approved partners of the Physical Inventory Project (PHI).
+The project makes uses of various FANC NuGet packages. The consuming application should target at least .NET 4.6.1 and preferably .NET 4.7.2 or higher (or .NET Core 2 or higher)
 
 ### SampleJSClient
 
