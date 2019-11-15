@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,24 @@ using FANC.DXP.DTO;
 using FANC.DXP.DTO.PHI;
 using Newtonsoft.Json;
 
-namespace SampleControlBodyClient
+
+namespace SamplePHIClient
 {
     public partial class MainForm : Form
     {
+        private DXPAPIClientSettings settings;
+        
+
         public MainForm()
         {
             InitializeComponent();
+
+            var apiUri = ConfigurationManager.AppSettings["apiUri"];
+            var clientId = ConfigurationManager.AppSettings["clientId"];
+            var clientSecret = ConfigurationManager.AppSettings["clientSecret"];
+            
+            this.settings = new DXPAPIClientSettings(apiUri, clientId, clientSecret);
+            
         }
 
         /// <summary>
@@ -25,8 +37,8 @@ namespace SampleControlBodyClient
         /// <param name="e"></param>
         private async void butGetCodeLists_Click(object sender, EventArgs e)
         {
-            var rds = new ReferenceDataClient();
-            var result = await rds.GetCodeListsAsync(this.txtAppCode.Text);
+            var rdClient = new ReferenceDataClient(settings);
+            var result = await rdClient.GetCodeListsAsync(this.txtAppCode.Text);
             this.LogApiCallResult(result, false);
 
             if (result != null)
@@ -53,7 +65,7 @@ namespace SampleControlBodyClient
         {
             if (!String.IsNullOrWhiteSpace(this.txtCodeList.Text))
             {
-                var rdClient = new ReferenceDataClient();
+                var rdClient = new ReferenceDataClient(settings);
                 var result = await rdClient.GetCodeListValuesAsync(this.txtCodeList.Text, this.txtAppCode.Text);
                 this.LogApiCallResult(result, false);
 
@@ -83,7 +95,7 @@ namespace SampleControlBodyClient
         /// <param name="e"></param>
         private async void butGetLicenses_Click(object sender, EventArgs e)
         {
-            var phiClient = new PHIClient();
+            var phiClient = new PHIClient(settings);
 
             var sinceDate = this.dtpSinceDate.Checked ? dtpSinceDate.Value : new DateTime?();
 
@@ -103,7 +115,7 @@ namespace SampleControlBodyClient
         {
             if (!String.IsNullOrWhiteSpace(this.txtLicenseNumber.Text))
             {
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(settings);
                 var result = await phiClient.GetLicenseDetailsAsync(this.txtLicenseNumber.Text);
                 this.LogApiCallResult(result, false);
 
@@ -124,7 +136,7 @@ namespace SampleControlBodyClient
         {
             if (!String.IsNullOrWhiteSpace(this.txtLicenseNumber.Text))
             {
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(settings);
                 var result = await phiClient.GetLicenseDocumentsAsync(this.txtLicenseNumber.Text);
                 this.LogApiCallResult(result, false);
 
@@ -183,7 +195,7 @@ namespace SampleControlBodyClient
                 inventory.PhysicalItems.Add(item);
             }
 
-            var phiClient = new PHIClient();
+            var phiClient = new PHIClient(settings);
             var result = await phiClient.PostPhysicalInventoryAsync(inventory);
             this.LogApiCallResult(result);
 
@@ -204,7 +216,7 @@ namespace SampleControlBodyClient
 
                 this.rtxtLog.Text = "";
 
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(settings);
                 var result = await phiClient.GetDataFileStatusAsync(dataFileNumber);
                 this.LogApiCallResult(result);
             }
@@ -220,7 +232,7 @@ namespace SampleControlBodyClient
             {
                 var dataFileNumber = this.txtDataFileNumber.Text;
 
-                var phiClient = new PHIClient();
+                var phiClient = new PHIClient(settings);
                 var result = await phiClient.GetDataFileProcessingResultAsync(dataFileNumber);
                 this.LogApiCallResult(result, false);
 

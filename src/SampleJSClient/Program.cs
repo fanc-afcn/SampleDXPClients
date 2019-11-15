@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace JS_Test_Client
+namespace SampleJSClient
 {
     public class Program
     {

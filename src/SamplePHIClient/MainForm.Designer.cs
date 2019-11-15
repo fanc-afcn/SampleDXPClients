@@ -1,4 +1,4 @@
-﻿namespace SampleControlBodyClient
+﻿namespace SamplePHIClient
 {
     partial class MainForm
     {
